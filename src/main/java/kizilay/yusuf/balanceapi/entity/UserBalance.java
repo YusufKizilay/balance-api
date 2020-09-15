@@ -40,7 +40,7 @@ public class UserBalance implements Serializable {
     @JsonFormat(pattern = "YYYY-MM-dd HH:mm")
     private Date updatedDate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "userBalance", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "userBalance", cascade = CascadeType.PERSIST)
     @JsonIgnore
     private List<UserBalanceHistory> balanceHistories = new ArrayList<>();
 
